@@ -1,77 +1,77 @@
-# ⚙️ Installation
+# ⚙️ 安装
 
-> The easiest way to get up-and-running is with the [Directus Suite](https://github.com/directus/directus), which includes the [Directus API](https://github.com/directus/api), the [Directus App](https://github.com/directus/app), and all dependencies.
+> 使用 [Directus 套件](https://github.com/directus/directus)是最快捷简便的方式，在套件中包含了 [Directus API](https://github.com/directus/api)，[Directus App](https://github.com/directus/app)，以及所有的依赖。
 
-## Requirements
+## 系统要求
 
-Directus is developed and tested on the LAMP stack, and therefore this is the only officially supported environment. Alternate stacks (NGINX, Caddy, MariaDB, Percona, etc) may also work but you should proceed at your own risk. Please ensure your server meets the following requirements:
+Directus 在 LAMP 技术栈上开发和测试，因此这是唯一的官方支持运行环境。在其他技术栈上（比如 NGINX、Caddy、MariaDB、Percona等等）也能运行，但你需要自己承担潜在风险。务必确保你的服务器符合以下系统要求：
 
 * **Apache**
 * **MySQL 5.7+**
-    * A Database (empty or existing)
-    * A Database User (with access to database)
+    * 一个可用的数据库（空的或者已有数据的都行）
+    * 一个可用的数据库用户（用于访问数据库）
 * **PHP 7.1+**
-    * Extensions:  `pdo`, `mysql`, `curl`, `gd`, `fileinfo`, `libapache2-mod-php` and `mbstring`
+    * 扩展:  `pdo`, `mysql`, `curl`, `gd`, `fileinfo`, `libapache2-mod-php` and `mbstring`
 
-::: tip Alternate SQL Vendors
-In theory, Directus should work with MySQL drop-in alternatives such as MariaDB (`10.2+`) or Percona Server. However, these are *not* officially supported so you should proceed at your own risk.
+::: tip 可选的 SQL 数据库
+理论上，Directus 可以使用 MariaDB (`10.2+`) 或 Percona Server 来替代 MySQL。但值得注意的是，这些 *并非* 官方支持方案，你需要自行承担潜在风险。
 :::
 
-::: tip Detailed Requirements
-View our [detailed requirements page](/advanced/requirements.md) to learn more about these requirements, neccesary permissions, and other server-specific prerequisites.
+::: tip 具体的系统要求
+浏览[系统要求详情页面](/advanced/requirements.md)了解更多关于系统要求、必要的权限，以及其他服务器相关的预备知识。
 :::
 
-## Setup
+## 安装
 
-Running the following `git` command from your server's command line is the preferred method of installing the codebase.
+在服务器命令行工具运行以下 `git` 命令。
 
 ```bash
 git clone https://github.com/directus/directus.git
 ```
 
-::: tip Other Install Methods
-Alternatively, you can choose from one of these other installation methods.
+::: tip 其他安装方式
+还可以选择以下安装方式：
 * [Docker](/advanced/other-install-methods.md#docker)
-* [Zip, Tar, or FTP](/advanced/other-install-methods.md#manual)
-* [Standalone](/advanced/other-install-methods.md#standalone)
-* [Source](/advanced/other-install-methods.md#source)
+* [Zip, Tar, 或 FTP](/advanced/other-install-methods.md#manual)
+* [独立安装](/advanced/other-install-methods.md#standalone)
+* [源码安装](/advanced/other-install-methods.md#source)
 :::
 
 ::: tip
-If you are using Apache, make sure `mod_rewrite` and `AllowOverride` are enabled. [Read more](/advanced/server-setup.md#apache)
+如果你在使用 Apache，请确保已启用 `mod_rewrite` 和 `AllowOverride`。[了解更多](/advanced/server-setup.md#apache)
 :::
 
 ::: tip
-If after installation you are experiencing missing functions or packages errors, [follow these steps](https://github.com/directus/api/issues/620#issuecomment-449905619) to recreate `composer.json` and update the composer autoloader. If there's already a `composer.json`, either run [`composer dump-autoload`](https://getcomposer.org/doc/03-cli.md#dump-autoload-dumpautoload-).
+安装之后，如果遇到找不到函数或包的错误提示，按照[这些步骤](https://github.com/directus/api/issues/620#issuecomment-449905619)重新创建 `composer.json` 并更新 composer 的自动加载。如果已经存在 `composer.json`，也需要运行 [`composer dump-autoload`](https://getcomposer.org/doc/03-cli.md#dump-autoload-dumpautoload-)。
 :::
 
-## Configure
+## 配置
 
-1. Set your document root to the `/public` directory
-2. Navigate your browser to the App at `/admin`
-3. Follow the prompts to complete configuration (see below)
+1. 将网站根目录设置为 `/public` 目录
+2. 在浏览器中访问 `/admin` 打开管理系统
+3. 根据如下提示完成配置
 
-Field          | Description
+字段          | 描述
 :------------- | :-----------
-Project Name   | The name of your project
-Project Key    | For now, only the `_` default is available through the installer
-Admin Email    | The email address of your first administrator
-Admin Password | The password for your first administrator
-Host           | The server/host of your database
-Port           | The port for the database (default is 3306)
-Database User  | The database user
-Database Password | The database user's password
-Database Name  | The name of the database
-Database Type  | As of now, Directus only supports MySQL
+Project Name   | 项目名称The name of your project
+Project Key    | 迄今为止，只有 `_` 是有效的
+Admin Email    | 管理员邮箱
+Admin Password | 管理员密码
+Host           | 数据库地址
+Port           | 数据库端口（默认3306）
+Database User  | 数据库用户名
+Database Password | 数据库用户密码
+Database Name  | 数据库名称
+Database Type  | 数据库类型，目前 Directus 只支持 MySQL
 
-:::tip Manual Configuration
-Alternatively, you can [manually configure Directus](/advanced/api/configuration.md).
+:::tip 手动配置
+作为一个可选方式，你可以[手动配置 Directus](/advanced/api/configuration.md).
 :::
 
-## Logging In
+## 登录
 
-Once you've completed the installer you will automatically be taken to the login page of the Directus App (again, at `/admin`). You can then login with the credentials you provided during configuration, or the default credentials (`admin@example.com` and `password`) if configured manually.
+完成安装过程后，将进入登录 Directus App 的页面（url是 `/admin`）。你可以使用前面配置的管理员账号登入协调，或者，如果你是手动配置的，使用默认的账号(账号`admin@example.com` 和密码 `password`)。
 
 ---
 
-👍 You've successfully installed Directus! Now you're ready to [add your first collection](/guides/collections.md).
+👍 好了，你已经成功安装了 Directus。现在可以开始[添加你的第一个数据集](/guides/collections.md)了。

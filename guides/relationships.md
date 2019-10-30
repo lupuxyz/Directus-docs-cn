@@ -1,12 +1,12 @@
-﻿# Relationships
+﻿# 数据关联
 
-> If certain collections within your project are related then you can connect them with Relationships. There are multiple types of relationships but technically Directus only needs to store one: the **Many-to-One**.
+> 如果项目中的某些数据集存在关联关系，你可以使用数据关联将它们连接起来。虽然常见的关联关系有多个类型，但从技术上来讲，Directus仅需存储一种：**多对一**。
 
-## Many-to-One
+## 多对一 Many-to-One
 
-A many-to-one (M2O) relationship exists when an item of **Collection A** is linked to one single item of **Collection B**, but an item of **Collection B** may be linked to many items of **Collection A**. For example, a movie has one director, but directors have many movies.
+多对一 (M2O) 关系即是说，**数据集 A** 中的一条数据关联到**数据集 B**中某一条数据，但**数据集 B**中的一条数据可以关联到**数据集 A**中的多条数据。例如：一部电影有一个导演，但每个导演都可以有多部电影。
 
-### Setup
+### 设置
 
 <br>
 

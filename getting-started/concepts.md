@@ -1,4 +1,4 @@
-# 🧠 Concepts
+# 🧠 概念
 
 > Directus ([duh REKT iss](http://audio.pronouncekiwi.com/Salli/Directus)) is latin for: _laid straight, arranged in lines_. The broadest goal of Directus is to present data in a simple, orderly, and intuitive way.
 
@@ -14,21 +14,21 @@ A field that does not actually map to a database column (eg: a divider or the on
 
 The base schema and system content included in a fresh/blank copy of Directus.
 
-### Client
+### 客户端
 
-An external application using data managed by Directus.
+即外部的使用 Directus 管理数据的应用程序。
 
-### Collection
+### 数据集 Collection
 
-A Collection is a grouping of similar Items. Each collection represents a table in your database.
+数据集是若干类似内容条目的编组。每个数据集表示数据库中的一个表。
 
 ### Collection Preset
 
-Also known as a "bookmark", this is a specific view of a collection assigned to an individual user, a role, or global. It includes:
+也称作“书签”，这是面向单个用户、角色或者全局的数据集特定视角。它包含以下内容：
 
-* Search query
-* Filters
-* View Type
+* 搜索查询
+* 过滤器
+* 视图类型
 * Sort Field and Direction
 * Layout Query (eg: visible fields)
 * Layout Options (eg: tabular column widths)
